@@ -200,7 +200,7 @@ export function setServerSideRenderingState(ssrState) {
 function getRouteData(route, language) {
   const fetchOptions = {
     layoutServiceConfig: { host: config.sitecoreApiHost },
-    querystringParams: { sc_lang: language, sc_apikey: config.sitecoreApiKey },
+    querystringParams: { sc_site: 'satellite-' + language, sc_lang: language, sc_apikey: config.sitecoreApiKey },
     fetcher: dataFetcher,
   };
 
