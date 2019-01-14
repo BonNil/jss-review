@@ -178,7 +178,7 @@ export default class RouteHandler extends React.Component {
       return null;
     }
     // Render the app's root structural layout
-    var Layout = LayoutFactory.resolveLayout(routeData.sitecore.route);
+    const Layout = LayoutFactory.resolveLayout(routeData.sitecore.route);
 
     return <Layout route={routeData.sitecore.route} />;
   }
