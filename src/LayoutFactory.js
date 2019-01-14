@@ -2,23 +2,16 @@ import * as layouts from './layouts'
 
 class LayoutFactory {
   constructor() {
-    console.log('layoutfactory constructed!');
-
-    this.layoutMap = {
-      B4A8C4CDEB584C7FA77964659FD3DD4B: layouts.TestLayout,
-      default: layouts.DefaultLayout
-    }
+    this.layoutMap = new Map();
+    this.layoutMap.set('{B4A8C4CD-EB58-4C7F-A779-64659FD3DD4B}', layouts.TestLayout);
+    this.layoutMap.set('default', layouts.DefaultLayout);
   }
 
   resolveLayout(routeData) {
-    var layoutId = this.washId(routeData.layoutId);
-    var layout = this.layoutMap[layoutId];
+    const layoutId = `{${routeData.layoutId.toUpperCase()}}`;
+    const layout = this.layoutMap.get(layoutId);
 
-    return layout || this.layoutMap.default;
-  }
-
-  washId(id) {
-    return id.replace(/[[\]{}\-']+/g, '').toUpperCase();
+    return layout || this.layoutMap.get('default');
   }
 }
 

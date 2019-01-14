@@ -6,7 +6,7 @@ import SitecoreContextFactory from './lib/SitecoreContextFactory';
 import { dataFetcher } from './dataFetcher';
 import config from './temp/config';
 import NotFound from './NotFound';
-import LayoutFactory from './LayoutFactory.js'
+import LayoutFactory from './LayoutFactory.js' // instead of -> import Layout from ./Layout.js
 
 // Dynamic route handler for Sitecore items.
 // Because JSS app routes are defined in Sitecore, traditional static React routing isn't enough -
@@ -177,7 +177,10 @@ export default class RouteHandler extends React.Component {
     if (!routeData || this.languageIsChanging) {
       return null;
     }
-    // Render the app's root structural layout
+
+    // Render the app's root structural layout.
+    // We let the LayoutFactory resolve the layoutId
+    // sent by the layout service and fetch the correct layout.
     const Layout = LayoutFactory.resolveLayout(routeData.sitecore.route);
 
     return <Layout route={routeData.sitecore.route} />;
