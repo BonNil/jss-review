@@ -1,5 +1,5 @@
 import * as layouts from './layouts'
-import {default as DeafaultLayout} from './layouts/DefaultLayout.js'
+import {default as DefaultLayout} from './layouts/DefaultLayout.js'
 
 class LayoutFactory {
   constructor() {
@@ -14,7 +14,7 @@ class LayoutFactory {
     var layoutId = this.washId(routeData.layoutId);
     var layout = this.layoutMap[layoutId];
 
-    return layout || DeafaultLayout;
+    return layout || DefaultLayout;
   }
 
   washId(id) {
