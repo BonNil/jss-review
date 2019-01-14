@@ -1,12 +1,12 @@
 import * as layouts from './layouts'
-import {default as DefaultLayout} from './layouts/DefaultLayout.js'
 
 class LayoutFactory {
   constructor() {
     console.log('layoutfactory constructed!');
 
     this.layoutMap = {
-      B4A8C4CDEB584C7FA77964659FD3DD4B: layouts.TestLayout
+      B4A8C4CDEB584C7FA77964659FD3DD4B: layouts.TestLayout,
+      default: layouts.DefaultLayout
     }
   }
 
@@ -14,7 +14,7 @@ class LayoutFactory {
     var layoutId = this.washId(routeData.layoutId);
     var layout = this.layoutMap[layoutId];
 
-    return layout || DefaultLayout;
+    return layout || this.layoutMap.default;
   }
 
   washId(id) {

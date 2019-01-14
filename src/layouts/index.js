@@ -1,3 +1,4 @@
 import TestLayout from './TestLayout.js';
+import { default as DefaultLayout } from './DefaultLayout.js';
 
-export { TestLayout };
+export { DefaultLayout, TestLayout };
