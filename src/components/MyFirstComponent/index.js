@@ -6,7 +6,7 @@ const MyFirstComponent = (props) => {
   return (
   <div>
     <p>MyFirstComponent Component</p>
-    <Text field={props.fields.Title} />
+    <Text field={props.fields.heading} />
   </div>
   )
 };

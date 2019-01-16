@@ -1,0 +1,9 @@
+id: test
+
+fields:
+  pageTitle: Welcome to tests
+placeholders:
+  jss-main:
+  - componentName: NewComponent
+    fields:
+      heading: WELCOME TO test
