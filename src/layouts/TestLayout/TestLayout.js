@@ -3,12 +3,13 @@ import { Placeholder, VisitorIdentification } from '@sitecore-jss/sitecore-jss-r
 import { NavLink } from 'react-router-dom';
 import { withNamespaces } from 'react-i18next';
 import Helmet from 'react-helmet';
+import MetaData from './MetaData.js';
 
 // Using bootstrap is completely optional. It's used here to provide a clean layout for samples,
 // without needing extra CSS in the sample app. Remove it in package.json as well if it's removed here.
 import 'bootstrap/dist/css/bootstrap.css';
-import '../assets/app.css';
-import logo from '../assets/sc_logo.png';
+import '../../assets/app.css';
+import logo from '../../assets/sc_logo.png';
 
 /*
   APP LAYOUT
@@ -74,9 +75,12 @@ const Layout = ({ route }) => (
     {/* root placeholder for the app, which we add components to using route data */}
     <div className="container">
       <div><h2>TEST LAYOUT</h2></div>
-      <Placeholder name="jss-main" rendering={route} />
+      <Placeholder name={MetaData.Placeholders.jssMain.key} rendering={route} />
     </div>
   </React.Fragment>
 );
 
-export default Layout;
+export {
+  Layout,
+  MetaData
+};

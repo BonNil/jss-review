@@ -1,4 +1,7 @@
-import TestLayout from './TestLayout.js';
-import { default as DefaultLayout } from './DefaultLayout.js';
+import * as TestLayout from './TestLayout/TestLayout.js';
+import * as DefaultLayout from './DefaultLayout/DefaultLayout.js';
 
-export { DefaultLayout, TestLayout };
+export {
+  DefaultLayout,
+  TestLayout
+}

@@ -1,10 +1,10 @@
-import * as layouts from './layouts'
+import * as Layouts from './layouts'
 
 class LayoutFactory {
   constructor() {
     this.layoutMap = new Map();
-    this.layoutMap.set('{B4A8C4CD-EB58-4C7F-A779-64659FD3DD4B}', layouts.TestLayout);
-    this.layoutMap.set('default', layouts.DefaultLayout);
+    this.layoutMap.set('{B4A8C4CD-EB58-4C7F-A779-64659FD3DD4B}', Layouts.TestLayout.Layout);
+    this.layoutMap.set('default', Layouts.DefaultLayout.Layout);
   }
 
   resolveLayout(routeData) {
