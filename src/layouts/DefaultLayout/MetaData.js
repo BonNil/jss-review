@@ -1,4 +1,4 @@
-const MetaData = {
+const Metadata = {
   name: 'DefaultLayout',
   placeholders: {
     jssMain: {
@@ -9,4 +9,4 @@ const MetaData = {
   displayName: "Default Layout"
 };
 
-export default MetaData
+export default Metadata

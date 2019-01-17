@@ -1,4 +1,4 @@
-const MetaData = {
+const Metadata = {
   name: 'Test Layout',
   placeholders: {
     jssMain: {
@@ -8,4 +8,4 @@ const MetaData = {
   }
 };
 
-export default MetaData
+export default Metadata
