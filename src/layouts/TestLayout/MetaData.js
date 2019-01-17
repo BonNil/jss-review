@@ -1,6 +1,6 @@
 const MetaData = {
-  Name: 'Test Layout',
-  Placeholders: {
+  name: 'Test Layout',
+  placeholders: {
     jssMain: {
       name: 'jss-main',
       key: 'jss-main'

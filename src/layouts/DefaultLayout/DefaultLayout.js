@@ -74,12 +74,9 @@ const Layout = ({ route }) => (
 
     {/* root placeholder for the app, which we add components to using route data */}
     <div className="container">
-      <Placeholder name={MetaData.Placeholders.jssMain.key} rendering={route} />
+      <Placeholder name={MetaData.placeholders.jssMain.key} rendering={route} />
     </div>
   </React.Fragment>
 );
 
-export {
-  Layout,
-  MetaData
-};
+export default Layout
