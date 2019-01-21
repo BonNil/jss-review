@@ -1,4 +1,4 @@
-import TestLayoutMeta from './TestLayout/Metadata';
+import TestLayoutMeta from './TestLayout/MetaData.js';
 import DefaultLayoutMeta from './DefaultLayout/Metadata.js';
 
 export default [

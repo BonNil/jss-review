@@ -22,3 +22,8 @@ configGenerator(configOverride);
   COMPONENT FACTORY GENERATION
 */
 require('./generate-component-factory');
+
+/*
+  LAYOUT MAP GENERATION
+*/
+require('./generate-layout-map');

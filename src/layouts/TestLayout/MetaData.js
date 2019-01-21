@@ -1,11 +1,20 @@
 const Metadata = {
-  name: 'Test Layout',
-  placeholders: {
-    jssMain: {
-      name: 'jss-main',
+  name: 'TestLayout',
+  placeholders: [
+    {
+      name: 'JssMain',
       key: 'jss-main'
+    },
+    {
+      name: 'KaffeBanan',
+      key: 'kaffe-banan'
+    },
+    {
+      name: 'kanonkula',
+      key: 'kanonkula'
     }
-  }
+  ],
+  displayName: "Test Layout"
 };
 
 export default Metadata

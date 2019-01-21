@@ -1,11 +1,15 @@
 const Metadata = {
   name: 'DefaultLayout',
-  placeholders: {
-    jssMain: {
-      name: 'jss-main',
+  placeholders: [
+    {
+      name: 'JssMain',
       key: 'jss-main'
+    },
+    {
+      name: 'KaffeBanan',
+      key: 'kaffe-banan'
     }
-  },
+  ],
   displayName: "Default Layout"
 };
 

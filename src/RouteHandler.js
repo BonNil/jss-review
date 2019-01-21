@@ -181,7 +181,7 @@ export default class RouteHandler extends React.Component {
     // Render the app's root structural layout.
     // We let the LayoutFactory resolve the layoutId
     // sent by the layout service and fetch the correct layout.
-    const Layout = LayoutFactory.resolveLayout(routeData.sitecore.route);
+    const Layout = LayoutFactory.resolveLayout(routeData.sitecore.context);
 
     return <Layout route={routeData.sitecore.route} />;
   }

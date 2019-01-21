@@ -1,5 +1,5 @@
-import TestLayout from './TestLayout/TestLayout.js';
-import DefaultLayout from './DefaultLayout/DefaultLayout.js';
+import TestLayout from './TestLayout/index.js';
+import DefaultLayout from './DefaultLayout/index.js';
 
 export {
   DefaultLayout,
