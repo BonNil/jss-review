@@ -8,7 +8,7 @@ export const config = (pipelines) => {
     name: 'generateLayouts',
     process: function (args) {
       console.log('inline process patch: generateLayouts');
-      
+
       const finalLayouts = [];
       for (var key in Layouts){
         finalLayouts.push(Layouts[key]);
