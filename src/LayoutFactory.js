@@ -5,8 +5,7 @@ class LayoutFactory {
     this.layoutMap = LayoutMap;
   }
 
-  resolveLayout(contextData) {
-    console.log(contextData);
+  resolveLayout(contextData) {;
     const layoutName = contextData.layout.name;
     const layout = this.layoutMap.get(layoutName);
 

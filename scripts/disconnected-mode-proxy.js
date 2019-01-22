@@ -13,6 +13,8 @@ const fs = require('fs');
 const path = require('path');
 const { createDefaultDisconnectedServer } = require('@sitecore-jss/sitecore-jss-dev-tools');
 const config = require('../package.json').config;
+const { resolveLayout } = require('./layout-service/resolveLayout');
+
 
 const touchToReloadFilePath = 'src/temp/config.js';
 
@@ -36,6 +38,10 @@ const proxyOptions = {
     } else {
       console.log('Manifest data updated. Refresh the browser to see latest content!');
     }
+  },
+  customizeContext: (context, route) => {
+    let customizedContext = resolveLayout(context, route);
+    return customizedContext;
   },
 };
 

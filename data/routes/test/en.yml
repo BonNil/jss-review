@@ -1,5 +1,5 @@
 id: test
-
+layoutName: TestLayout
 fields:
   pageTitle: Welcome to tests
 placeholders:
