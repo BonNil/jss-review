@@ -7,16 +7,15 @@ const chokidar = require('chokidar');
   Generates the /src/temp/componentFactory.js file which maps React components
   to JSS components.
 
-  The component factory is a mapping between a string name and a React component instance.
-  When the Sitecore Layout service returns a layout definition, it returns named components.
-  This mapping is used to construct the component hierarchy for the layout.
+  The layout map is a mapping between a string name and a React component instance.
+  The name corespond to the layout item name in Sitecore.
 
   The default convention uses the parent folder name as the component name,
-  but it is customizable in generateComponentFactory().
+  but it is customizable in generateLayoutMap().
 
   NOTE: this script can run in two modes. The default mode, the component factory file is written once.
   But if `--watch` is a process argument, the component factory source folder will be watched,
-  and the componentFactory.js rewritten on added or deleted files.
+  and the layoutMap.js rewritten on added or deleted files.
   This is used during `jss start` to pick up new or removed components at runtime.
 */
 
@@ -51,11 +50,11 @@ function writeLayoutMap() {
 }
 
 function generateLayoutMap() {
-  // by convention, we expect to find React components
-  // * under /src/components/ComponentName
+  // by convention, we expect to find React layouts
+  // * under /src/layouts/layoutName/
   // * with an index.js under the folder to define the component
   // If you'd like to use your own convention, encode it below.
-  // NOTE: generating the component factory is also totally optional,
+  // NOTE: generating the layout map is also totally optional,
   // and it can be maintained manually if preferred.
 
   const imports = [];
