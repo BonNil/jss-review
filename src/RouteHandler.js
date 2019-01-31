@@ -22,6 +22,7 @@ export default class RouteHandler extends React.Component {
 
     this.state = {
       notFound: true,
+      accessDenied: false,
       routeData: ssrInitialState, // null when client-side rendering
       defaultLanguage: config.defaultLanguage,
     };
@@ -105,6 +106,8 @@ export default class RouteHandler extends React.Component {
           ...routeData.sitecore.context,
         });
         this.setState({ routeData, notFound: false });
+      } else if (routeData != null && routeData == 401) {
+        this.setState({ accessDenied: true });
       } else {
         this.setState({ routeData, notFound: true });
       }
@@ -156,7 +159,20 @@ export default class RouteHandler extends React.Component {
   }
 
   render() {
-    const { notFound, routeData } = this.state;
+    const { notFound, routeData, accessDenied } = this.state;
+
+    if (accessDenied) {
+      return (
+        <div>
+          <Helmet>
+            <title>{i18n.t('YOU, SHALL NOT, PAAASSSSSS!')}</title>
+          </Helmet>
+          <div>
+            <h1>{i18n.t('YOU, SHALL NOT, PAAASSSSSS!')}</h1>
+          </div>
+        </div>
+      );
+    }
 
     // no route data for the current route in Sitecore - show not found component.
     // Note: this is client-side only 404 handling. Server-side 404 handling is the responsibility
@@ -211,6 +227,8 @@ function getRouteData(route, language) {
   return dataApi.fetchRouteData(route, fetchOptions).catch((error) => {
     if (error.response && error.response.status === 404 && error.response.data) {
       return error.response.data;
+    } else if (error.response && error.response.status === 401) {
+      return 401;
     }
 
     console.error('Route data fetch error', error, error.response);
